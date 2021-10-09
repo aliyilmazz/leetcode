@@ -17,7 +17,6 @@ class Solution:
             else:
                 num_set[num] = num_index
 
-
             # print("target-num: " + str(target-num))
             # if (target-num) in num_set:
             #     first_index = num_index
