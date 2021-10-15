@@ -1,6 +1,6 @@
 package com.mybasepackage;
 
-class Solution {
+class MaxProfit {
     public int maxProfit(int[] prices) {
         int maxProfit = 0;
         int i = 0;
@@ -16,7 +16,7 @@ class Solution {
     }
 
     public static void main(String[] args) {
-        Solution solution = new Solution();
+        MaxProfit solution = new MaxProfit();
         int[] prices = new int[]{1,2,3,4,5};
         int maxProfit = solution.maxProfit(prices);
         System.out.println(String.format("Max profit: %s", maxProfit));
