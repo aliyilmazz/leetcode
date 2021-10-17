@@ -2,6 +2,7 @@ package com.mybasepackage;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import com.mybasepackage.helpers.ListNode;
 
 /**
  * Definition for singly-linked list.
@@ -14,14 +15,6 @@ import java.util.Arrays;
  * }
  */
 
-
-class ListNode {
-    int val;
-    ListNode next;
-    ListNode() {}
-    ListNode(int val) {this.val = val;}
-    ListNode(int val, ListNode next) { this.val=val; this.next=next;}
-}
 
 class AddTwoNumbers {
 
