@@ -1,47 +1,18 @@
 package com.mybasepackage;
-
-
 import java.util.*;
-
-class FixedSizePQ<E> extends TreeSet<E> {
-    final int _capacity;
-
-    public FixedSizePQ(final int capacity) {
-        this._capacity = capacity;
-    }
-
-    public FixedSizePQ(final int capacity, final Comparator<? super E> comparator) {
-        super(comparator);
-        this._capacity = capacity;
-    }
-
-    @Override
-    public boolean add(final E e) {
-        if (this._capacity <= 0) { return false; }
-
-        if (size() < this._capacity) { super.add(e); }
-        else {
-            if (comparator() != null && comparator().compare(this.last(), e) < 0) {
-                pollLast();
-                return super.add(e);
-            }
-        }
-        return false;
-    }
-}
-
+import java.util.stream.IntStream;
 
 
 public class KthLargestElement {
 
     public int findKthLargest(int[] nums, int k) {
-        FixedSizePQ<Integer> mostFrequentNums = new FixedSizePQ<>(k, Collections.reverseOrder());
+        Queue<Integer> largestNums = new PriorityQueue<>(Collections.reverseOrder());
         for (Integer num: nums) {
-            mostFrequentNums.add(num);
+            largestNums.add(num);
         }
-        //Arrays.stream(nums).forEach(mostFrequentNums::add);
-
-        return mostFrequentNums.first();
+        //Arrays.stream(nums).forEach(largestNums::add);
+        IntStream.range(0, k-1).forEach(i->largestNums.poll());
+        return largestNums.poll();
     }
 
     public static void main(String[] args) {
