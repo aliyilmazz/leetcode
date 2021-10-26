@@ -51,10 +51,10 @@ public class ConstructBinaryTreeFromInorderAndPreorder {
         ConstructBinaryTreeFromInorderAndPreorder cls = new ConstructBinaryTreeFromInorderAndPreorder();
 
         // root, left, right
-        int[] preorder = new int[]{1,2,3};
+        int[] preorder = new int[]{1,2,3,4,5};
 
         // left, root, right
-        int[] inorder = new int[]{3,2,1};
+        int[] inorder = new int[]{2,1,4,3,5};
 
         TreeNode treeNode = cls.buildTree(preorder, inorder);
 
