@@ -2,8 +2,7 @@ from typing import List
 
 
 class Solution:
-    def foo(self, input: List[int]) -> bool:
-        return True
+    def isPalindrome(self, s: str) -> bool:
 
 
 def verbose_assert(*args):
@@ -12,5 +11,5 @@ def verbose_assert(*args):
 
 
 if __name__ == '__main__':
-    args = ([1,2,3])
-    verbose_assert(*args)
+
+    verbose_assert()
