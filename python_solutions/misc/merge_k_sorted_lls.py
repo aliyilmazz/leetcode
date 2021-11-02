@@ -1,16 +1,38 @@
-from typing import List
+from typing import List, Optional
+from ..utils.ListNode import ListNode
 
 
 class Solution:
-    def foo(self, input: List[int]) -> bool:
-        return True
+    def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
+        """
+
+        iterate each one, get int list out of them
+        merge int lists
+        sort int list
+        create new linkedlist out of this intlist
 
 
-def verbose_assert(*args):
-    output = Solution().foo(*args)
-    print("Input:  %s\nOutput: %s" % (args, output))
+        """
+        int_list = []
+        for _ll in lists:
+            ll = _ll
+            while ll:
+                print("adding val: %s" % ll.val)
+                int_list.append(ll.val)
+                ll = ll.next
 
+        if len(int_list) == 0:
+            return None
 
-if __name__ == '__main__':
-    args = ([1,2,3])
-    verbose_assert(*args)
+        print("intlist:%s" % int_list)
+        int_list.sort()
+        print("intlist:%s" % int_list)
+
+        new_ll = ListNode(int_list[0])
+        head = new_ll
+        int_list_traverser = 1
+        while int_list_traverser < len(int_list):
+            new_ll.next = ListNode(int_list[int_list_traverser])
+            int_list_traverser += 1
+            new_ll = new_ll.next
+        return head
